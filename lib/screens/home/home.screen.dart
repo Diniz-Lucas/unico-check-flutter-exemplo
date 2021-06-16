@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home.controller.dart';
 
-
 class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
@@ -27,15 +26,6 @@ class HomeScreen extends GetView<HomeController> {
               onPressed: controller.openDocument,
               icon: Icon(Icons.pages, size: 18),
               label: Text('Navegar para Documentos'),
-            ),
-            ElevatedButton.icon(
-              onPressed: controller.openOcr,
-              icon: Icon(Icons.pages, size: 18),
-              label: Text('Navegar para OCR'),
-            ),ElevatedButton.icon(
-              onPressed: controller.openFaceMatch,
-              icon: Icon(Icons.pages, size: 18),
-              label: Text('Navegar para Face Match'),
             ),
           ],
         ),

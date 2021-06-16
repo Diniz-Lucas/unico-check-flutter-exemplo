@@ -10,8 +10,4 @@ class HomeController extends GetxController {
 
   void openDocument() => Get.toNamed(Routes.ACESSO_BIO_DOCUMENT);
 
-  void openOcr() => Get.toNamed(Routes.ACESSO_BIO_OCR);
-
-  void openFaceMatch() => Get.toNamed(Routes.ACESSO_BIO_FACEMATCH);
-
 }

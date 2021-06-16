@@ -12,7 +12,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: ^4.1.4
-  unico_check: ^1.0.1
+  unico_check:
+   path: ../unico_check_flutter
 
 dev_dependencies:
   flutter_test:

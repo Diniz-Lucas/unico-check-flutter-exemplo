@@ -12,20 +12,14 @@ class AcessoBioCameraNormalController extends GetxController implements IAcessoB
   }
 
   void openCamera() {
-    // _unico.camera!.disableSmartFrame();
-    // _unico.camera!.disableAutoCapture();
+    _unico.camera!.disableSmartFrame();
+    _unico.camera!.disableAutoCapture();
     _unico.camera!.openCamera();
   }
 
   @override
   void onSuccessCamera(CameraResponse response) {
-
-    if(response.base64 != null && response.base64 != "" ){
-      SnackbarUtil.showSuccess(message: "Success ID:"+response.processID);
-    }else{
-      SnackbarUtil.showError(message: "Não retornou base64");
-    }
-
+    SnackbarUtil.showSuccess(message: "success");
   }
 
   @override

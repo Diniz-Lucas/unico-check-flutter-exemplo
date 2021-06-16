@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_unico_check_plugin/utils/snackbar.util.dart';
 import 'package:unico_check/unico_check.dart';
 
-class AcessoBioCameraController extends StatefulWidget
+class AcessoBioCameraController extends GetxController
     implements IAcessoBioCamera  {
 
   late UnicoCheck _unico;
@@ -20,29 +20,19 @@ class AcessoBioCameraController extends StatefulWidget
   }
 
   @override
-  void onErrorAcessoBio(ErrorBioResponse error) {
-    SnackbarUtil.showSuccess(message: error.description);
-  }
-
-  @override
   void onErrorCamera(ErrorBioResponse error) {
     SnackbarUtil.showSuccess(message: error.description);
   }
 
   @override
-  void onErrorDocumentInsert(String error) {
-    SnackbarUtil.showSuccess(message: error);
-  }
-
-  @override
   void onSuccessCamera(CameraResponse response) {
     _base64 = response.base64;
-    SnackbarUtil.showSuccess(message: "success ID: "+response.processID);
-  }
 
-  @override
-  void onSucessDocumentInsert(String processId, String typed) {
-    SnackbarUtil.showSuccess(message: "success ID: "+processId);
+    if(response.base64 != null && response.base64 != "" ){
+      SnackbarUtil.showSuccess(message: "Success base64");
+    }else{
+      SnackbarUtil.showError(message: "Do not return base64");
+    }
   }
 
   @override
@@ -51,12 +41,8 @@ class AcessoBioCameraController extends StatefulWidget
   }
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+  void onErrorAcessoBio(ErrorBioResponse error) {
+    SnackbarUtil.showSuccess(message: error.description);
   }
-
-
-
 
 }

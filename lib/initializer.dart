@@ -9,9 +9,6 @@ class Initializer {
 
   static void _initUnico() {
     final unicoInit = UnicoConfig(
-      urlInstance: "",
-      apikey: "",
-      authToken: "",
       // androidColorSilhoutte: "#901850"
       // androidColorBackground: "#901850"
     );
