@@ -4,11 +4,10 @@ import 'package:test_unico_check_plugin/utils/snackbar.util.dart';
 import 'package:unico_check/unico_check.dart';
 
 class AcessoBioCameraController extends GetxController
-    implements IAcessoBioCamera  {
-
+    implements IAcessoBioCamera {
   late UnicoCheck _unico;
   String _base64 = "";
-  late ValueNotifier<String> base64 ;
+  late ValueNotifier<String> base64;
 
   AcessoBioCameraController() {
     _unico = UnicoCheck(context: this, config: Get.find());
@@ -28,9 +27,9 @@ class AcessoBioCameraController extends GetxController
   void onSuccessCamera(CameraResponse response) {
     _base64 = response.base64;
 
-    if(response.base64 != null && response.base64 != "" ){
+    if (response.base64 != null && response.base64 != "") {
       SnackbarUtil.showSuccess(message: "Success base64");
-    }else{
+    } else {
       SnackbarUtil.showError(message: "Do not return base64");
     }
   }
@@ -45,4 +44,14 @@ class AcessoBioCameraController extends GetxController
     SnackbarUtil.showSuccess(message: error.description);
   }
 
+  @override
+  void systemClosedCameraTimeoutSession() {
+    SnackbarUtil.showSuccess(message: "systemClosedCameraTimeoutSession");
+  }
+
+  @override
+  void systemChangedTypeCameraTimeoutFaceInference() {
+    SnackbarUtil.showSuccess(
+        message: "systemChangedTypeCameraTimeoutFaceInference");
+  }
 }

@@ -2,9 +2,8 @@ import 'package:get/get.dart';
 import 'package:test_unico_check_plugin/utils/snackbar.util.dart';
 import 'package:unico_check/unico_check.dart';
 
-
-class AcessoBioCameraNormalController extends GetxController implements IAcessoBioCamera {
-
+class AcessoBioCameraNormalController extends GetxController
+    implements IAcessoBioCamera {
   late UnicoCheck _unico;
 
   AcessoBioCameraNormalController() {
@@ -37,4 +36,14 @@ class AcessoBioCameraNormalController extends GetxController implements IAcessoB
     SnackbarUtil.showError(message: "Camera fecheda manualmente");
   }
 
+  @override
+  void systemClosedCameraTimeoutSession() {
+    SnackbarUtil.showSuccess(message: "systemClosedCameraTimeoutSession");
+  }
+
+  @override
+  void systemChangedTypeCameraTimeoutFaceInference() {
+    SnackbarUtil.showSuccess(
+        message: "systemChangedTypeCameraTimeoutFaceInference");
+  }
 }
