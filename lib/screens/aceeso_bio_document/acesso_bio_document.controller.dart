@@ -22,28 +22,27 @@ class AcessoBioDocumentController extends GetxController
   }
 
   @override
-  void onErrorDocument(String error) {
-    SnackbarUtil.showError(message: error);
+  void onErrorDocument(ErrorBioResponse error) {
+    SnackbarUtil.showError(message: error.description);
   }
 
   @override
-  void onSuccesstDocument(CameraDocumentResponse response) {
-    SnackbarUtil.showSuccess(message: "Success");
+  void onSuccessDocument(CameraDocumentResponse response) {
+    SnackbarUtil.showError(message: "Success");
   }
 
   @override
-  void userClosedCameraManually() {
-    SnackbarUtil.showError(message: "Camera fecheda manualmente");
+  void onSystemChangedTypeCameraTimeoutFaceInference() {
+    SnackbarUtil.showError(message: "change camera timeout");
   }
 
   @override
-  void systemClosedCameraTimeoutSession() {
-    SnackbarUtil.showSuccess(message: "systemClosedCameraTimeoutSession");
+  void onSystemClosedCameraTimeoutSession() {
+    SnackbarUtil.showError(message: "close camera timeout");
   }
 
   @override
-  void systemChangedTypeCameraTimeoutFaceInference() {
-    SnackbarUtil.showSuccess(
-        message: "systemChangedTypeCameraTimeoutFaceInference");
+  void onUserClosedCameraManually() {
+    SnackbarUtil.showError(message: "user close camera");
   }
 }

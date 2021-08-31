@@ -152,10 +152,10 @@ packages:
   unico_check:
     dependency: "direct main"
     description:
-      path: "../unico_check_flutter"
-      relative: true
-    source: path
-    version: "2.0.0-beta.2"
+      name: unico_check
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   vector_math:
     dependency: transitive
     description:
